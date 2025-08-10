@@ -26,10 +26,11 @@ window.onload = function() {
     function move(event) {
         var scenePosition = scene.getBoundingClientRect();
         var playerPosition = player.getBoundingClientRect();
-        console.log(playerPosition.right, scenePosition.right)
-
+        var catPosition = cat.getBoundingClientRect();
+        console.log(catPosition);
+        console.log(playerPosition);
         if(event.key === "ArrowRight") { // right
-            if(playerPosition.right < scenePosition.right) {
+            if(playerPosition.right < scenePosition.right + scenePosition.width) {
                 positionX += 32
                 player.style.backgroundImage = "url('./sprite/Player\ right.svg')"
                 player.style.left = positionX + "px";
@@ -61,14 +62,16 @@ window.onload = function() {
             } else {
 
             }
-            
         }
-        
 
+        if(event.code === "Space") {
+            if(catPosition.bottom > playerPosition.top && catPosition.left < playerPosition.right && catPosition.right > playerPosition.left) {
+                cat.style.opacity = "1";
+            }
+        }
     }
 
     
-
 
 
 
@@ -76,7 +79,6 @@ window.onload = function() {
         move(event)
     };
 
-    // document.onkeydown = move;
     
     document.onkeyup = function(event) {
         player.style.backgroundImage = "url('./sprite/Player\ idle.svg')"
