@@ -1,10 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    font-family: "Press Start 2P";
+}
+
 body {
     width: 90vw;
 }
 
+p {
+    text-align: center;
+}
+
 h1 {
     width: 90vw;
+    text-align: center;
 }
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: -10000px;
+    transition: left 1s;
+    z-index: 4;
+    color:cornflowerblue;
+}
+
+img {
+    width: 100px;
+}
+
+
 
 #player {
     z-index: 2;
@@ -15,6 +41,7 @@ h1 {
     animation: movement .5s steps(6) infinite;
     transform: scale(2, 2);
     position: relative;
+
 }
 
 #bed {
@@ -30,6 +57,7 @@ h1 {
     width: 32px;
     height: 32px;
     opacity: 0;
+    z-index: 1;
     background: url("./sprite/Idle.png") left center;
     animation: play .5s steps(10) infinite;
     position: relative;
@@ -40,13 +68,14 @@ h1 {
 
 #cat2 {
     opacity: 0;
+    z-index: 1;
     width: 32px;
     height: 32px;
     background: url(./sprite/Box3.png) left center;
     animation: play2 .5s steps(4) infinite;
     position: relative;
-    top: calc(49% - 32px);
-    left: calc(85% - 32px);
+    top: calc(0% - 32px);
+    left: calc(5% - 32px);
     transition: opacity 1s;
 }
 
@@ -57,8 +86,8 @@ h1 {
     background: url(./sprite/sleepingcat1.png) left center;
     animation: play3 .8s steps(6) infinite;
     position: relative;
-    top: calc(45% - 64px);
-    left: calc(56% - 64px);
+    top: calc(-5% - 64px);
+    left: calc(91% - 64px);
     transition: opacity 1s;
 }
 
@@ -80,7 +109,7 @@ h1 {
     height: 60px;
     background-image: url(./sprite/Door.svg);
     position: relative;
-    top: calc(60% - 54px);
+    top: calc(-8% - 54px);
     left: calc((50% - 60px));
 }
 
@@ -89,7 +118,51 @@ h1 {
     height: 42px;
     background-image: url(./sprite/fireplace.svg);
     position: relative;
-    
+    top: calc(-60% - 42px);
+    left: calc(88% - 44px)
+}
+
+#sofaDown {
+    width: 65px;
+    height: 45px;
+    background-image: url(./sprite/sofaDown.svg);
+    position: relative;
+    top: calc(0% - 45px);
+    left: calc(50% - 65px);
+}
+
+#sofaRight {
+    width: 26px;
+    height: 60px;
+    background-image: url(./sprite/sofaRight.svg);
+    position: relative;
+    top: -64px;
+}
+
+#sofaLeft {
+    width: 26px;
+    height: 60px;
+    background-image: url(./sprite/sofaLeft.svg);
+    position: relative;
+    top: calc(-11% - 60px);
+    left: calc(60% - 26px);
+}
+
+#sofaUp {
+    width: 66px;
+    height: 34px;
+    background-image: url(./sprite/sofaUp.svg);
+    position: relative;
+    left: calc(70%);
+    top: calc(53%);
+}
+
+#bookShelfDown {
+    width: 43px;
+    height: 72px;
+    background-image: url(./sprite/bookshelfDown.svg);
+    position: relative;
+    top: calc(-68% - 72px);
 }
 
 #cat:hover {

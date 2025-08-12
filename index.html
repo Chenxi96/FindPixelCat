@@ -8,17 +8,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Find the Cats</h1>
+    <h1>Find the 3 Cats</h1>
 
     <div id="scene">
         <div id="bed" class="furniture"></div>
-        <div id="cat"></div>
-        <div id="cat2"></div>
-        <div id="cat3"></div>
-        <div id="fireplace" class="furniture"></div>
-        <div id="door"></div>
+        <div id="cat" class="cats"></div>
+        <div id="cat2" class="cats"></div>
+        <div id="cat3" class="cats"></div>
+        <div id="sofaUp"></div>
+        <div id="sofaDown"></div>
         <div id="player" tabindex="0"></div>
+        <div id="sofaLeft"></div>
+        <div id="fireplace" class="furniture"></div>
+        <div id="bookShelfDown"></div>
+        <div id="sofaRight"></div>
+        <div id="door"></div>
     </div>
+
+    <p>Use the Arrow keys <span><img src="./sprite/Arrow Keyboard.svg" alt="arrow key"></span> to walk around the room.</p>
+    <p>Use Space bar <span><img src="./sprite/Pause keyboard.svg" alt="space bar"></span> to check the furniture to find cats</p>
+
+    <p>You found <span id="count"></span> cats!</p>
+
+    <h2>Good Job! You found all the Cats!</h2>
 
 </body>
 </html>
