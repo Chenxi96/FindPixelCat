@@ -34,6 +34,7 @@ window.onload = function() {
 
 
     function move(event) {
+        // Get elements current position
         var scenePosition = scene.getBoundingClientRect();
         var playerPosition = player.getBoundingClientRect();
         var catPosition = cat.getBoundingClientRect();
@@ -41,6 +42,7 @@ window.onload = function() {
         var cat3Position = cat3.getBoundingClientRect();
         
         if(event.key === "ArrowRight") { // right
+            // 
             if(playerPosition.right < scenePosition.right) {
                 positionX += 32
                 player.style.backgroundImage = "url('./sprite/Player\ right.svg')"
@@ -75,7 +77,9 @@ window.onload = function() {
             }
         }
 
+        // When Space bar is pressed
         if(event.code === "Space") {
+            // If it is near cat
             if(catPosition.bottom > playerPosition.top && catPosition.left < playerPosition.right && catPosition.right > playerPosition.left) {
                 cat.style.opacity = "1";
                 commentP.innerText = "Congrats you find a cat!"
@@ -87,7 +91,7 @@ window.onload = function() {
                     commentP.innerText = "";
                 }, 2000);
             }
-
+            // if it is near cat 2
             if(cat2Position.bottom > playerPosition.top && cat2Position.left < playerPosition.right && cat2Position.right > playerPosition.left) {
                 cat2.style.opacity = "1";
                 commentP.innerText = "Congrats you find a cat!"
@@ -97,7 +101,7 @@ window.onload = function() {
                     commentP.innerText = "";
                 }, 2000)
             } 
-
+            // if it is near cat 3
             if(cat3Position.bottom > playerPosition.top && cat3Position.left < playerPosition.right && cat3Position.right > playerPosition.left) {
                 cat3.style.opacity = "1";
                 commentP.innerText = "Congrats you find a cat!"
